@@ -181,7 +181,69 @@ export class AppComponent implements OnInit {
                 citation: '楓葉 P.287',
                 isConflict: true,
                 summary: []
-            },]
+            }, {
+                name: 'Selection Tree',
+                definition: '用來合併k個sorted array。',
+                citation: 'Horowitz P.240',
+                isConflict: false,
+                summary: [
+                    {
+                        name: 'Winner Tree',
+                        description: '把k個run的隊頭拿出來倆倆比較，贏的成為parent的key，贏的繼續往上比。直到得出總冠軍。',
+                        citation: 'Horowitz P.241',
+                        isConflict: false,
+                    },
+                    {
+                        name: 'Loser Tree',
+                        description: '把k個run的隊頭拿出來倆倆比較，輸的成為parent的key，贏的繼續往上比。直到得出總冠軍。root的key為冠軍賽的輸家。在root上面新增另一個node，紀錄總冠軍。當取出總冠軍後，要讀出下一個隊頭更新tree。Loser Tree比Winner少需要讀取sibling node。',
+                        citation: 'Horowitz P.243',
+                        isConflict: false,
+                    }
+                ]
+            }, {
+                name: 'Disjoint Sets',
+                definition: '互相沒有交集的sets。每個set的每個node指向另一個node，無cycle。有Union、Find兩個函數。',
+                citation: 'Horowitz P.255',
+                isConflict: false,
+                summary: [
+                    {
+                        name: 'simpleUnion',
+                        description: '把函數參數第一個set的root指向第二個set的root。會產生skewed tree。',
+                        citation: 'Horowitz P.248-249',
+                        isConflict: false
+                    },
+                    {
+                        name: 'simpleFind',
+                        description: '沿著node至root的路徑找root。不做其他事。',
+                        citation: 'Horowitz P.250',
+                        isConflict: false
+                    },
+                    {
+                        name: 'weightedUnion',
+                        description: '紀錄每個set的node數，將node數比較大的set的root設為node數比較小的set的root的parent。',
+                        citation: 'Horowitz P.252',
+                        isConflict: false
+                    },
+                    {
+                        name: 'collapsingFind',
+                        description: '在尋找root的過程中，順便把沿途的node設為root的child。',
+                        citation: 'Horowitz P.253-255',
+                        isConflict: false
+                    }
+                ]
+            }, {
+                name: 'Binary Tree的種數',
+                definition: '若node數為n，則有C(2n,n)/(n+1)種。為Catalan Number。因為binary tree的左右子樹也為binary tree，與Catalan Number的遞迴定義相同。',
+                citation: 'Horowitz P.259',
+                isConflict: false,
+                summary: []
+            }, {
+                name: 'Binary Tree的平均樹高',
+                definition: '從空的binary tree隨機插入n個node，樹高的期望值為O(log(n))。',
+                citation: '楓葉 P.299-303',
+                isConflict: false,
+                summary: []
+            }]
         },
         {
             name: '演算法',
