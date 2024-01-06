@@ -14,7 +14,7 @@ jobs:
       uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
       with:
         github_access_token: ${{ secrets.SuperSecret }} # see the Configuration section for how you can create secrets
-        build_configuration: staging # The build environment for the app. please look configurations in your angular.json
+        build_configuration: production # The build environment for the app. please look configurations in your angular.json
         base_href: /cs_note/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
         deploy_branch: gh-pages # The branch the action should deploy to.
         angular_dist_build_folder: dist/cs_note # The folder where your project is supposed to be after running ng build by the action.
