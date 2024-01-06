@@ -214,19 +214,19 @@ export class AppComponent implements OnInit {
                     },
                     {
                         name: 'simpleFind',
-                        description: '沿著node至root的路徑找root。不做其他事。',
+                        description: '沿著node至root的路徑找root。不做其他事。n個simpleUion + n個simpleFind的worst case為O(n^2)。',
                         citation: 'Horowitz P.250',
                         isConflict: false
                     },
                     {
                         name: 'weightedUnion',
-                        description: '紀錄每個set的node數，將node數比較大的set的root設為node數比較小的set的root的parent。',
+                        description: '紀錄每個set的node數，將node數比較大的set的root設為node數比較小的set的root的parent。u個weightedUnion + f個simpleFind的worst case為O(u+flog(u))。',
                         citation: 'Horowitz P.252',
                         isConflict: false
                     },
                     {
                         name: 'collapsingFind',
-                        description: '在尋找root的過程中，順便把沿途的node設為root的child。',
+                        description: '在尋找root的過程中，順便把沿途的node設為root的child。假設有n個set，且u>=n/2，則u個weightedUnion + f個collapsingFind的worst case為O(n+fα(f+n, n))。α為Ackerman反函數，增長速度非常小。',
                         citation: 'Horowitz P.253-255',
                         isConflict: false
                     }
