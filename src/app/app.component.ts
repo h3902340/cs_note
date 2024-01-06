@@ -243,6 +243,24 @@ export class AppComponent implements OnInit {
                 citation: '楓葉 P.299-303',
                 isConflict: false,
                 summary: []
+            }, {
+                name: 'Articulation Point',
+                definition: '移除此點會導致圖變成有兩個以上的connected component',
+                citation: 'Horowitz P.286',
+                isConflict: false,
+                summary: []
+            }, {
+                name: 'Biconnected Component',
+                definition: '不存在articulation point的component',
+                citation: 'Horowitz P.286',
+                isConflict: false,
+                summary: []
+            }, {
+                name: 'Adjacency List',
+                definition: '用來表示undirected graph。用一個陣列列出所有node，然後每個node各自指向一個列出鄰點的linked list。',
+                citation: 'Horowitz P.281',
+                isConflict: false,
+                summary: [],
             }]
         },
         {
@@ -262,6 +280,7 @@ export class AppComponent implements OnInit {
             terms: []
         },
     ];
+    private keyword: string = '';
 
     public ngOnInit(): void {
         let temp = localStorage.getItem(this.isShowCitationsKey);
@@ -275,5 +294,14 @@ export class AppComponent implements OnInit {
     public onToggleCitation(event: any): void {
         this.isShowCitations = event.currentTarget.checked;
         localStorage.setItem(this.isShowCitationsKey, this.isShowCitations.toString());
+    }
+
+    public isMatchKeyword(name: string): boolean {
+        if (this.keyword == '') return true;
+        return name.toLowerCase().includes(this.keyword);
+    }
+
+    public onSearch(event: any): void {
+        this.keyword = event.currentTarget.value.toLowerCase();
     }
 }

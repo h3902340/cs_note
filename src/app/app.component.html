@@ -1,14 +1,17 @@
 <body class="dark-mode font-size">
+    <input type="text" placeholder="Search.." (input)="onSearch($event)">
     <details *ngFor="let subject of subjects">
         <summary>{{subject.name}}</summary>
-        <details *ngFor="let term of subject.terms">
-            <summary class="sub-detail" [ngClass]="{'conflict-red': term.isConflict}">{{term.name}}</summary>
-            <div class="sub-div">{{term.definition}}{{isShowCitations ? ' (' + term.citation + ')' : ''}}</div>
-            <details class="sub-detail" *ngFor="let item of term.summary">
-                <summary class="sub-detail" [ngClass]="{'conflict-red': item.isConflict}">{{item.name}}</summary>
-                <div class="sub-div">{{item.description}}{{isShowCitations ? ' (' + item.citation + ')' : ''}}</div>
+        <div *ngFor="let term of subject.terms">
+            <details [hidden]="!isMatchKeyword(term.name)">
+                <summary class="sub-detail" [ngClass]="{'conflict-red': term.isConflict}">{{term.name}}</summary>
+                <div class="sub-div">{{term.definition}}{{isShowCitations ? ' (' + term.citation + ')' : ''}}</div>
+                <details class="sub-detail" *ngFor="let item of term.summary">
+                    <summary class="sub-detail" [ngClass]="{'conflict-red': item.isConflict}">{{item.name}}</summary>
+                    <div class="sub-div">{{item.description}}{{isShowCitations ? ' (' + item.citation + ')' : ''}}</div>
+                </details>
             </details>
-        </details>
+        </div>
     </details>
     <input style="margin-top: 20px;" type="checkbox" [checked]="isShowCitations"
         (change)="onToggleCitation($event)">Show Citations
