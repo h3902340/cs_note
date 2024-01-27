@@ -245,13 +245,13 @@ export class AppComponent implements OnInit {
                 summary: []
             }, {
                 name: 'Articulation Point',
-                definition: '移除此點會導致圖變成有兩個以上的connected component',
+                definition: '移除此點會導致圖變成有兩個以上的connected component。可以用DFS找出back edge(指向ancestor的edge)，算出dfn與low。如果有一個點的child的low比較大，則此點為articulation point。若root(DFS的起點)有兩個child以上，則root也為articulation point。',
                 citation: 'Horowitz P.286',
                 isConflict: false,
                 summary: []
             }, {
                 name: 'Biconnected Component',
-                definition: '不存在articulation point的component',
+                definition: '不存在articulation point的component。',
                 citation: 'Horowitz P.286',
                 isConflict: false,
                 summary: []
@@ -265,7 +265,13 @@ export class AppComponent implements OnInit {
         },
         {
             name: '演算法',
-            terms: []
+            terms: [{
+                name: 'Kruskal\'s Algorithm',
+                definition: '一次選一條最小的且不會造成cycle的edge。最後可得到MST。time complexity：O(ElogE)',
+                citation: 'Horowitz P.292-296 楓葉P.633 (time complexity)',
+                isConflict: false,
+                summary: [],
+            }]
         },
         {
             name: '計組',
@@ -277,7 +283,61 @@ export class AppComponent implements OnInit {
         },
         {
             name: 'OS',
-            terms: []
+            terms: [{
+                name: 'RAID 0',
+                definition: 'block-level striping, no mirroring or parity',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },{
+                name: 'RAID 1',
+                definition: 'mirroring, no parity or striping',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },{
+                name: 'RAID 2',
+                definition: 'bit-level striping with Hamming-code parity',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },{
+                name: 'RAID 3',
+                definition: 'byte-level striping, parity is in one disk',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },{
+                name: 'RAID 4',
+                definition: 'block-level striping, parity is in one disk',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },{
+                name: 'RAID 5',
+                definition: 'block-level striping, distributed parity',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },{
+                name: 'RAID 6',
+                definition: 'block-level striping, double distributed parity',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },{
+                name: 'RAID 0+1',
+                definition: 'create stripes from an array of disks, then mirror them',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },{
+                name: 'RAID 1+0',
+                definition: 'mirror the disks, then create stripes from the mirrored disks',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            },]
         },
     ];
     private keyword: string = '';
