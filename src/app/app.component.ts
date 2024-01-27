@@ -289,55 +289,113 @@ export class AppComponent implements OnInit {
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },{
+            }, {
                 name: 'RAID 1',
                 definition: 'mirroring, no parity or striping',
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },{
+            }, {
                 name: 'RAID 2',
                 definition: 'bit-level striping with Hamming-code parity',
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },{
+            }, {
                 name: 'RAID 3',
                 definition: 'byte-level striping, parity is in one disk',
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },{
+            }, {
                 name: 'RAID 4',
                 definition: 'block-level striping, parity is in one disk',
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },{
+            }, {
                 name: 'RAID 5',
                 definition: 'block-level striping, distributed parity',
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },{
+            }, {
                 name: 'RAID 6',
                 definition: 'block-level striping, double distributed parity',
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },{
+            }, {
                 name: 'RAID 0+1',
                 definition: 'create stripes from an array of disks, then mirror them',
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },{
+            }, {
                 name: 'RAID 1+0',
                 definition: 'mirror the disks, then create stripes from the mirrored disks',
                 citation: '',
                 isConflict: false,
                 summary: [],
-            },]
+            }, {
+                name: 'Banker\'s Alogorithm',
+                definition: 'Need: the "remaining" resouces needed for the thread',
+                citation: '',
+                isConflict: false,
+                summary: [{
+                    name: 'Safety Algorithm',
+                    description: 'Set Finish to true if there are enough resources available to complete a process, retrieve the allocations from the process. ',
+                    citation: '',
+                    isConflict: false,
+                }, {
+                    name: 'Resource-Request Algorithm',
+                    description: 'If there are enough resources and the resulting system is in a safe state, grant the request.',
+                    citation: '',
+                    isConflict: false,
+                }, {
+                    name: 'Memory-Mapped Files',
+                    description: 'Map a file to memory to avoid disk I/O. Use mmap system call. Some system requires manually manage the memory-mapped files, they are mapped to user space. Solaris maps files to memory automatically, they\'re mapped to kernel space instead.',
+                    citation: '',
+                    isConflict: false,
+                },],
+            }, {
+                name: 'Cache Miss Type',
+                definition: 'There are 4 types of cahe misses according to pillar book.',
+                citation: '',
+                isConflict: false,
+                summary: [
+                    {
+                        name: 'Compulsory',
+                        description: 'Happen when the memory is referenced for the first time.',
+                        citation: '',
+                        isConflict: false,
+                    },
+                    {
+                        name: 'Capacity',
+                        description: 'Happen when the cache size is not enough to hold all data.',
+                        citation: '',
+                        isConflict: false,
+                    },
+                    {
+                        name: 'Conflict',
+                        description: 'Happen when the data was in the cache, but got evicted because there was a conflict and the data was replaced by another data.',
+                        citation: '',
+                        isConflict: false,
+                    },
+                    {
+                        name: 'Coherency',
+                        description: 'Happen when the data becomes invalid because the data has been changed by another processor.',
+                        citation: '',
+                        isConflict: false,
+                    },
+                ]
+            }, {
+                name: 'Copy-On-Write',
+                definition: 'Copy the shared memory for the process that wants to write the data.',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            }]
         },
     ];
     private keyword: string = '';
