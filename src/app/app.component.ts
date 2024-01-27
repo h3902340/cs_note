@@ -395,6 +395,18 @@ export class AppComponent implements OnInit {
                 citation: '',
                 isConflict: false,
                 summary: [],
+            }, {
+                name: 'fork()',
+                definition: 'fork() creates a child process and returns the pid of the child process. In the child process, it will return 0. fork() copies the current values of the variables and starts from the line of code where it is called.',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            }, {
+                name: 'Hard Link vs Symbolic (Soft) Link',
+                definition: 'Hard link points to the inode of the file. Symbolic link points to the file itself. When the file is delete, hard link still points to the inode, but symbolic link points to nothing. Files are store in an inode, which is a block of data on disk in a UNIX file system.',
+                citation: '',
+                isConflict: false,
+                summary: [],
             }]
         },
     ];
