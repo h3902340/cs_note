@@ -275,7 +275,28 @@ export class AppComponent implements OnInit {
         },
         {
             name: '計組',
-            terms: []
+            terms: [{
+                name: 'Desgin Principle',
+                definition: 'There 4 design principle for hardware design.',
+                citation: '',
+                isConflict: false,
+                summary: [{
+                    name: 'Smaller is faster',
+                    description: '越小越快',
+                    citation: '',
+                    isConflict: false,
+                }, {
+                    name: 'Good design demands compromise',
+                    description: '綜合考慮',
+                    citation: '',
+                    isConflict: false,
+                }, {
+                    name: 'Make the common case fast',
+                    description: '常用的要速度快',
+                    citation: '',
+                    isConflict: false,
+                }]
+            }]
         },
         {
             name: '計結',
@@ -407,7 +428,46 @@ export class AppComponent implements OnInit {
                 citation: '',
                 isConflict: false,
                 summary: [],
-            }]
+            }, {
+                name: 'Inverted Page Table',
+                definition: '',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            }, {
+                name: 'Hash-Based Page Table',
+                definition: '',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            }, {
+                name: 'Multi-level Page Table',
+                definition: '',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            }, {
+                name: 'File Allocation',
+                definition: '',
+                citation: '',
+                isConflict: false,
+                summary: [{
+                    name: 'Contiguous Allocation',
+                    description: 'Allocate contiguous blocks for the file. If the space is not enough, it can use "extent" to extend the space, link the file to another contiguous blocks of the storage.',
+                    citation: '',
+                    isConflict: false,
+                }, {
+                    name: 'Linked Allocation',
+                    description: 'Allocate a linked list of blocks. Can use FAT (file allocation table) to speed up the random access time, FAT is stored in the beginning of the file, it\'s a linked link of block numbers. The read head only needs to read the FAT to know where to read, doesn\'t need to read ',
+                    citation: '',
+                    isConflict: false,
+                }, {
+                    name: 'Indexed Allocation',
+                    description: '.',
+                    citation: '',
+                    isConflict: false,
+                }],
+            },]
         },
     ];
     private keyword: string = '';
