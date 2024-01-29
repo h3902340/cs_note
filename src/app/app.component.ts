@@ -296,11 +296,31 @@ export class AppComponent implements OnInit {
                     citation: '',
                     isConflict: false,
                 }]
+            }, {
+                name: 'jal',
+                definition: 'Jump and Link. It saves the $ra automatically. Jump to the specified byte address.',
+                citation: '',
+                isConflict: false,
+                summary: []
+            }, {
+                name: 'branch',
+                definition: 'jump to the specified "relative" address byte with a condition. Need to add 1 before adding the relative address.',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            }, {
+                name: 'Write-Through',
+                definition: 'When the cache data is changed, the change is also written to the memory. Virtual memory doesn\'t have write-through, it\'s too slow.',
+                citation: '',
+                isConflict: false,
+                summary: [],
+            }, {
+                name: 'Write-Back',
+                definition: 'When the cache changes, the change doesn\'t write to memory immediately.',
+                citation: '',
+                isConflict: false,
+                summary: [],
             }]
-        },
-        {
-            name: '計結',
-            terms: []
         },
         {
             name: 'OS',
