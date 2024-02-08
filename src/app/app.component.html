@@ -1,4 +1,8 @@
 <body class="dark-mode font-size">
+    <div>
+        <h2>反矩陣題目產生器</h2>
+        <app-matrix-generator></app-matrix-generator>
+    </div>
     <input type="text" placeholder="Search.." (input)="onSearch($event)">
     <details *ngFor="let subject of subjects">
         <summary>{{subject.name}}</summary>
